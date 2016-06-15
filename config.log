@@ -1,0 +1,88 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:571: checking host system type
+configure:641: checking for gcc
+configure:754: checking whether the C compiler (gcc  ) works
+configure:770: gcc -o conftest    conftest.c  1>&5
+configure:796: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:801: checking whether we are using GNU C
+configure:810: gcc -E conftest.c
+configure:829: checking whether gcc accepts -g
+configure:865: checking for c++
+configure:897: checking whether the C++ compiler (c++  ) works
+configure:913: c++ -o conftest    conftest.C  1>&5
+configure:939: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:944: checking whether we are using GNU C++
+configure:953: c++ -E conftest.C
+configure:972: checking whether c++ accepts -g
+configure:1006: checking how to run the C++ preprocessor
+configure:1024: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1049: checking for ANSI C header files
+configure:1062: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1132: c++ -o conftest -g -O2   conftest.C  1>&5
+configure:1159: checking for vector
+configure:1169: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1159: checking for strstream
+configure:1169: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1159: checking for string
+configure:1169: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1159: checking for fstream
+configure:1169: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1159: checking for new
+configure:1169: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1159: checking for exception
+configure:1169: c++ -E  conftest.C >/dev/null 2>conftest.out
+configure:1198: checking for working const
+configure:1252: c++ -c -g -O2  conftest.C 1>&5
+configure: In function `int main ()':
+configure:1208: uninitialized const `x'
+configure: failed program was:
+#line 1203 "configure"
+#include "confdefs.h"
+
+int main() {
+
+/* Ultrix mips cc rejects this.  */
+typedef int charset[2]; const charset x;
+/* SunOS 4.1.1 cc rejects this.  */
+char const *const *ccp;
+char **p;
+/* NEC SVR4.0.2 mips cc rejects this.  */
+struct point {int x, y;};
+static struct point const zero = {0,0};
+/* AIX XL C 1.02.0.0 rejects this.
+   It does not let you subtract one const X* pointer from another in an arm
+   of an if-expression whose if-part is not a constant expression */
+const char *g = "string";
+ccp = &g + (g ? g-g : 0);
+/* HPUX 7.0 cc rejects these. */
+++ccp;
+p = (char**) ccp;
+ccp = (char const *const *) p;
+{ /* SCO 3.2v4 cc rejects this.  */
+  char *t;
+  char const *s = 0 ? (char *) 0 : (char const *) 0;
+
+  *t++ = 0;
+}
+{ /* Someone thinks the Sun supposedly-ANSI compiler will reject this.  */
+  int x[] = {25, 17};
+  const int *foo = &x[0];
+  ++foo;
+}
+{ /* Sun SC1.0 ANSI compiler rejects this -- but not the above. */
+  typedef const int *iptr;
+  iptr p = 0;
+  ++p;
+}
+{ /* AIX XL C 1.02.0.0 rejects this saying
+     "k.c", line 2.27: 1506-025 (S) Operand must be a modifiable lvalue. */
+  struct s { int j; const int *ap[3]; };
+  struct s *b; b->j = 5;
+}
+{ /* ULTRIX-32 V3.1 (Rev 9) vcc rejects this */
+  const int foo = 10;
+}
+
+; return 0; }

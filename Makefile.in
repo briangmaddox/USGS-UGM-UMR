@@ -1,0 +1,64 @@
+SHELL			=	/bin/sh
+
+prefix			=	@prefix@
+exec_prefix		=	@exec_prefix@
+host_os			=	@host_os@
+srcdir			=	@srcdir@
+top_srcdir		=	@top_srcdir@
+enable_debug		=	@enable_debug@
+enable_noucharread	=	@enable_noucharread@
+
+# Where to find includes for libraries that Image depends on.
+INCPATHS = -I$(prefix)/include @TIFF_INC@ @GEOTIFF_INC@ 
+
+#Lib directorys
+LIBDIRS  = -L$(prefix)/lib -LGD
+
+# Libraries we need to link in
+LIBS =  -lGD -lMathLib -lImageLib -lgeotiff -ltiff -lpng -lz
+
+#SlaveLibs
+SLIBS = -lGD -lMathLib -lImageLib -lgeotiff -ltiff -lpng -lz
+
+
+ifeq ($(enable_debug),yes)
+DEBUG= -g -Wall
+else
+DEBUG= -O2
+endif
+
+
+CC= mpicc
+CXX= mpiCC
+CXXFLAGS= $(DEBUG) $(INCPATHS)
+
+# Suffix rules
+.SUFFIXES: .o .cpp
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $<
+
+# Dependencies for the master program
+OBJS = coeff.o color.o deltatron.o driver.o grid.o growth.o igrid.o imageio.o\
+       input.o landclass.o memory_obj.o pgrid.o proc.o \
+       scenario.o spread.o stats.o transition.o utilities.o output.o main.o \
+       ProjectionParams.o
+
+# Dependencies for the slave program
+SOBJ = coeff.o color.o deltatron.o driver.o grid.o growth.o igrid.o imageio.o\
+       input.o landclass.o slavemain.o memory_obj.o pgrid.o proc.o \
+       scenario.o spread.o stats.o transition.o utilities.o output.o \
+       ProjectionParams.o
+
+all: master slave
+
+master : $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o master $(LIBDIRS) $(LIBS)
+slave : $(SOBJ)
+	$(CXX) $(CXXFLAGS) $(SOBJ) -o slave $(LIBDIRS) $(SLIBS)
+
+
+clean:
+	rm -f $(OBJS) $(SOBJ) *~ master slave
+
+distclean: clean
+	rm -rf Makefile config.status config.cache

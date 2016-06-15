@@ -1,0 +1,19 @@
+n0 -wd /data1/source/ugm_latest/Scenarios ../master calibrate chesterparam
+n1 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n2 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n3 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n4 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n5 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n6 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n7 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n8 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n9 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n10 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n11 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n12 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n13 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n14 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n15 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n16 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+n17 -wd /data1/source/ugm_latest/Scenarios ../slave calibrate chesterparam
+
